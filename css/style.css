@@ -1,0 +1,291 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-image: url(/img/fondo\ estrellas.avif);
+    background-size: contain;
+    max-width:1920px;
+    height:1080px;
+}
+
+article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    max-width:1920px;
+    height:1080px;
+
+}
+
+header {
+  background-color:rgb(104, 107, 116);
+  font-family: 'Arial', sans-serif;
+  color:white;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 10px;
+  height: 100px;
+  max-height:70px;
+  
+}
+
+h1{
+  margin-top: -200px;
+  
+}
+.logo-header {
+  display: flex;
+  align-self: center;
+  width: 223px;
+  height: 300px;
+
+}
+
+.logo {
+  display: flex;
+  align-self: center;
+  max-width: 1000px;
+  max-height: 500px;
+  padding: 100px;
+
+}
+
+.master {
+  display: flex;
+  align-self: center;
+  justify-content: center;
+  width: 1000px;
+  height: 500px;
+  position:relative;
+  margin-top: 10px;
+
+}
+
+.buttons{
+  padding: 20px 110px;
+  display: flex;
+  flex-direction: row;
+
+
+}
+
+.buttons a,
+.difficulty-buttons button {
+    margin: 45px;
+    padding: 35px 110px;
+    text-decoration: none;
+    color: #fff;
+    border: 1px solid #fff;
+    border-radius: 30px;
+    cursor: pointer;
+    
+}
+
+.reglas {
+    margin: 50px;
+    border: 10px solid #fff;
+    border-radius: 30px;
+    padding: 50px;
+
+}
+
+input {
+    margin: 10px;
+    padding: 5px;
+}
+
+
+@media screen and (max-width: 768px) {
+  .logo {
+      max-width: 400px;
+      padding: 5%; 
+
+  }
+  .buttons {
+      flex-direction: column; 
+      align-items: center; 
+  }
+
+  .buttons a,
+  .difficulty-buttons button {
+      margin: 2% 0;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .logo {
+      width: 100px;
+      padding: 5%; 
+  }
+
+  .buttons {
+      flex-direction: column; 
+      align-items: center;
+      
+  }
+
+  .buttons a,
+  .difficulty-buttons button {
+      margin: 2% 0; 
+  }
+}
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/*A continuación viene el código css del juego*/
+.tablero-juego {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    display: flex;
+  }
+  
+  .btn {
+    font-size: 1.3rem;
+    letter-spacing: 1px;
+    font-weight: bold;
+    border: none;
+    border-radius: 0.3rem;
+    padding: 0.4rem 0.8rem;
+    margin: 1rem;
+    cursor: pointer;
+    transition: all 0.1s ease-in;
+    color: #171b27;
+  }
+  
+  .btn:hover {
+    background: #c7c4eb;
+    color: black;
+  }
+  
+  .btn:disabled {
+    background: #c7c4eb;
+    color: #5b5b5b;
+    cursor: auto;
+  }
+  
+  .btn img {
+    height: 1rem;
+    width: 1rem;
+  }
+  
+  .circulos {
+    display: flex;
+    width: 3rem;
+    height: 3rem;
+    background: #f79071;
+    border-radius: 15rem;
+    justify-content: center;
+    align-items: center;
+    margin: 0.5rem;
+    font-weight: bold;
+    color: #024249;
+    font-size: 1.6rem;
+    transition: all 0.1s ease-in;
+  }
+  
+
+  .ajustesjuego {
+    background: rgb(104, 107, 116);
+    border-radius: 1rem;
+    padding: 0.2rem 0.5rem;
+    margin: 1rem 0;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .ajustesjuego .btn-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  
+
+  .input-number {
+    font-size: 1.3rem;
+    letter-spacing: 1px;
+    font-weight: bold;
+    border: none;
+    border-radius: 0.3rem;
+    padding: 0.2rem 0.4rem;
+    width: 4rem;
+  }
+  
+  .main-container {
+    background: rgb(104, 107, 116);
+    display: flex;
+    border-radius: 1rem;
+  }
+  
+  #colores {
+    margin-top: 2rem;
+    max-width: 80vw;
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
+  }
+  
+  #colores > * {
+    cursor: pointer;
+  }
+  
+  #tablero {
+    flex-direction: column;
+  }
+  
+  #tablero #solucion {
+    height: 100%;
+    width: auto;
+    margin: 1rem;
+  }
+  
+  #tablero #solucion .circulos-container {
+    display: flex;
+    flex-direction: row;
+  }
+  
+  #tablero #solucion .circulos-container > * {
+    border: 1.5px #006975 solid;
+  }
+  
+  #tablero #solucion .adivinar-container {
+    display: flex;
+  }
+  
+  #tablero #solucion .adivinar-container .pista-container {
+    margin: 0.5rem 0.2rem;
+    width: 3rem;
+    height: 3.5rem;
+    background: #f79071;
+    border-radius: 0.2rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  #tablero #solucion .adivinar-container .pista-container .circulos {
+    background: #fa744f;
+    width: 0.8rem;
+    margin: 0.2rem;
+    height: 0.8rem;
+  }
+  
+  #tablero #solucion .adivinar-fila {
+    display: flex;
+    flex-direction: row;
+  }
+ /*
+// color palete
+$red-light: #f79071;
+$red-dark: #fa744f;
+$red-darker: #e45137;
+$blue-light: #16817a;
+$blue-dark: #006975;
+$blue-darker: #024249;
+
+/*
